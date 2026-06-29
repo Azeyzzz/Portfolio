@@ -1,15 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import heroImg from "./assets/photo_cmu.jpg";
+import viteLogo from "./assets/charlotte_logo.svg";
+import reactLogo from "./assets/cmu_seal.png";
+import "./App.css";
+import {
+  meta,
+  links,
+  projects,
+  education,
+  jobs,
+  awards,
+  socials,
+} from "./data/portfolio.ts";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [count, setCount] = useState(0);
+  const navStyle = "text-2xl font-spaceG font-bold hover:bg-fuchsia-500 px-4";
   return (
     <>
-      <section id="center">
+      <nav className="navbar sticky top-0 bg-pink-600 text-center text-white min-w-50">
+        {links.map((link) => (
+          <a key={link.href} href={link.href} className={navStyle}>
+            {link.text}
+          </a>
+        ))}
+      </nav>
+      <section className="cover" id="cover-link">
+        <div className="cover-page min-h-120">
+          <h1>{meta.name}</h1>
+        </div>
+      </section>
+      <section className="about-me"></section>
+      <section className="contract-cards"></section>
+      <section id="about-link" className="about-me">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
@@ -32,12 +55,15 @@ function App() {
 
       <div className="ticks"></div>
 
-      <section id="next-steps">
+      <section id="exp-link" className="exp-class"></section>
+      <section id="edu-link" className="exp-class"></section>
+      <section id="social-link" className="exp-class"></section>
+      <section>
         <div id="docs">
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#documentation-icon"></use>
           </svg>
-          <h2>Documentation</h2>
+          <h2>{meta.name}</h2> // you ended here, inserted a type.name
           <p>Your questions, answered</p>
           <ul>
             <li>
@@ -116,7 +142,7 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

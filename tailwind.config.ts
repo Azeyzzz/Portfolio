@@ -24,9 +24,7 @@ export default {
         border: "#2A2E38",
       },
       fontFamily: {
-        display: ['"Bebas Neue"', '"Arial Narrow"', "sans-serif"],
-        mono: ['"JetBrains Mono"', '"Courier New"', "monospace"],
-        body: ['"Inter"', "system-ui", "sans-serif"],
+        spaceG: ['"Space Grotesk"', "sans-serif"],
       },
       fontSize: {
         hero: ["clamp(4rem, 12vw, 9rem)", { lineHeight: "0.95" }],
