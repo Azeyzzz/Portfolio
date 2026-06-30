@@ -1,8 +1,4 @@
 // Type Constructors for data
-export type NavElements = {
-  text: string;
-  href: string;
-};
 export type Education = {
   school: string;
   location: string;
@@ -73,14 +69,6 @@ export const socials: Social[] = [
     link: "https://www.linkedin.com/in/zaeyadebenedetti/",
   },
   { name: "Github", logo: "", link: "https://github.com/Azeyzzz" },
-];
-export const links: NavElements[] = [
-  { text: "Home", href: "#cover-link" },
-  { text: "About Me", href: "#about-link" },
-  { text: "Experience", href: "#exp-link" },
-  { text: "Education", href: "#edu-link" },
-  { text: "Portfolio", href: "#port-link" },
-  { text: "Socials", href: "#social-link" },
 ];
 export const projects: Project[] = [
   {
