@@ -29,14 +29,14 @@ export type JobEx = {
   title: string;
   company: string;
   location: string;
-  job_start: string;
-  job_end: string; // if not current
+  start: string;
+  end: string; // if not current
   description: string;
   skills: string;
   logo: string;
 };
 
-export type award_cert = {
+export type Cert_Award = {
   name: string;
   awarder: string;
   date: string;
@@ -54,8 +54,26 @@ export const meta = {
   location: "Charlotte, NC",
   intro: "hi",
 };
-export const awards = {};
-export const socials = {};
+export const awards: Cert_Award[] = [
+  {
+    name: "Google Cybersecurity Professional Certificate v2",
+    awarder: "Coursera",
+    date: "June 2026",
+  },
+  {
+    name: "Chancellors List Fall 2023 - Spring 2026",
+    awarder: "University of North Carolina at Charlotte",
+    date: "2023-2026",
+  },
+];
+export const socials: Social[] = [
+  {
+    name: "LinkedIn",
+    logo: "",
+    link: "https://www.linkedin.com/in/zaeyadebenedetti/",
+  },
+  { name: "Github", logo: "", link: "https://github.com/Azeyzzz" },
+];
 export const links: NavElements[] = [
   { text: "Home", href: "#cover-link" },
   { text: "About Me", href: "#about-link" },
@@ -123,8 +141,8 @@ export const jobs: JobEx[] = [
     title: "Cashier / Customer Service Staff",
     company: "Publix",
     location: "Harrisburg, NC",
-    job_start: "Feb 2025",
-    job_end: "Current",
+    start: "Feb 2025",
+    end: "Current",
     description: "Job description here",
     skills: "skills here",
     logo: "photo url here",
@@ -134,8 +152,8 @@ export const jobs: JobEx[] = [
     title: "IT Lab: Summer Security Intensive Fellow",
     company: "Carnegie Mellon University Heinz College",
     location: "Pittsburgh, PA",
-    job_start: "Jun 2026",
-    job_end: "Aug 2026",
+    start: "Jun 2026",
+    end: "Aug 2026",
     description: "Job description here",
     skills: "skills here",
     logo: "photo url here",
@@ -145,8 +163,8 @@ export const jobs: JobEx[] = [
     title: "Dasher",
     company: "Doordash",
     location: "Cary, NC",
-    job_start: "May 2024",
-    job_end: "March 2025",
+    start: "May 2024",
+    end: "March 2025",
     description: "Job description here",
     skills: "skills here",
     logo: "photo url here",
@@ -156,8 +174,8 @@ export const jobs: JobEx[] = [
     title: "Shopper",
     company: "Instacart",
     location: "Cary, NC",
-    job_start: "May 2024",
-    job_end: "March 2025",
+    start: "May 2024",
+    end: "March 2025",
     description: "Job description here",
     skills: "skills here",
     logo: "photo url here",
