@@ -45,7 +45,7 @@ export type Social = {
 // --------------------------------------------------------------
 //  Actual Data
 export const meta = {
-  name: "Zaeya DeBenedetti",
+  name: "I'm Zaeya DeBenedetti",
   pronouns: "she/her",
   location: "Charlotte, NC",
   intro: "hi",
