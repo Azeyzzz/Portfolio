@@ -121,13 +121,13 @@ function App() {
             transparent
           />
         </div>
-        <main className="flex flex-col items-center justify-center">
-          <div className="relative z-10 flex-1 text-white">
-            <h2>About Me</h2>
+        <main className="grid grid-cols-4">
+          <div className="relative z-10 col-span-1 text-white bg-black h-100">
+            <h2>A little About Me</h2>
             <p>{meta.intro}</p>
           </div>
-          <div className="image flex-1 relative z-10">
-            <img className="h-screen/2 w-40 rounded-2xl" src={headshot}></img>
+          <div className="image relative col-span-1 col-start-3 z-10">
+            <img className="h-90 w-60 rounded-2xl" src={headshot}></img>
           </div>
         </main>
       </section>
@@ -177,11 +177,15 @@ function App() {
                 <img
                   src={charlotte}
                   alt="default pixel transition content, a cat!"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
                 />
               }
               secondContent={
-                <div id="edu-link" className="exp-class bg-blue-500">
+                <button id="edu-link" className="exp-class bg-blue-500">
                   {education.map((edu) => (
                     <div key={edu.school}>
                       <h2>{edu.school}</h2>
@@ -192,7 +196,7 @@ function App() {
                       <p>{edu.info}</p>
                     </div>
                   ))}
-                </div>
+                </button>
               }
               gridSize={8}
               pixelColor="#ffffff"
