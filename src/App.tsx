@@ -1,6 +1,7 @@
 import { useState } from "react";
 import headshot from "./assets/photo_cmu.jpg";
 import charlotte from "./assets/charlotte_logo.svg";
+import filler from "./assets/pixel-filler.png";
 import cmu from "./assets/cmu_seal.png";
 import DecryptedText from "./components/ui/DecryptedText";
 import FaultyTerminal from "./components/layout/FaultyTerminal.tsx";
@@ -35,7 +36,7 @@ function App() {
         className="grid grid-cols-6 grid-rows-9 min-h-screen"
         id="cover-link"
       >
-        <div className="background col-span-5 row-span-9 h-screen w-full absolute z-0">
+        {/* <div className="background col-span-5 row-span-9 h-screen w-full absolute z-0">
           <FaultyTerminal
             scale={1.5}
             gridMul={[2, 1]}
@@ -55,7 +56,7 @@ function App() {
             pageLoadAnimation
             brightness={0.6}
           />
-        </div>
+        </div> */}
         <div className="cover-page max-w-3xl text-left col-start-6 col-span-1 row-span-8 bg-pink-600 z-10">
           <AnimatedContent
             distance={100}
@@ -121,13 +122,13 @@ function App() {
             transparent
           />
         </div>
-        <main className="grid grid-cols-4">
-          <div className="relative z-10 col-span-1 text-white bg-black h-100">
-            <h2>A little About Me</h2>
-            <p>{meta.intro}</p>
+        <main className="grid grid-cols-8 grid-rows-6">
+          <div className="relative z-10 col-span-5 col-start-1 row-span-4 row-start-2 min-w-full text-white bg-gray-800 h-100 ml-10 rounded-2xl mt-5">
+            <h2 className="text-5x1">A little About Me</h2>
+            <p className="text-4xl p-2">{meta.intro}</p>
           </div>
-          <div className="image relative col-span-1 col-start-3 z-10">
-            <img className="h-90 w-60 rounded-2xl" src={headshot}></img>
+          <div className="image relative col-span-2 col-start-7 row-span-4 row-start-2 z-10 mt-5">
+            <img className="h-110 w-80 rounded-2xl" src={headshot}></img>
           </div>
         </main>
       </section>
@@ -175,7 +176,7 @@ function App() {
             <PixelTransition
               firstContent={
                 <img
-                  src={charlotte}
+                  src={filler}
                   alt="default pixel transition content, a cat!"
                   style={{
                     width: "100%",
@@ -209,7 +210,7 @@ function App() {
             <PixelTransition
               firstContent={
                 <img
-                  src={charlotte}
+                  src={filler}
                   alt="default pixel transition content, a cat!"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -239,7 +240,7 @@ function App() {
             <PixelTransition
               firstContent={
                 <img
-                  src={charlotte}
+                  src={filler}
                   alt="default pixel transition content, a cat!"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -271,8 +272,8 @@ function App() {
             <PixelTransition
               firstContent={
                 <img
-                  src={charlotte}
-                  alt="default pixel transition content, a cat!"
+                  src={filler}
+                  alt="default pixel transition content"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               }
