@@ -36,7 +36,9 @@ function App() {
           </a>
         ))}
       </nav>
-
+      {/*
+        00ffb3
+        */}
       <section
         className="grid grid-cols-6 grid-rows-9 min-h-screen bg-black"
         id="cover-link"
@@ -458,71 +460,129 @@ function App() {
               />
             </AnimatedContent>
           </div>
-          <div className="col-start-3 col-span-2 row-span-2 relative z-10">
-            {activeContract === "none" && <div className="w-full h-full"></div>}
-            {activeContract === "projects" && (
-              <div className="">
-                {projects.map((project) => (
-                  <div className="bg-green-500" key={project.id}>
-                    <h2>{project.title}</h2>
-                    <img src={project.photo}></img>
-                    <small>
-                      {" "}
-                      {project.date_created} - {project.date_updated}{" "}
-                    </small>
-                    <p>{project.description}</p>
-                    <a href={project.website}>Link</a>
-                  </div>
-                ))}
+          <div className="col-start-3 col-span-2 row-span-2 relative z-10 w-full h-full bg-black rounded-2xl border border-white font-spaceG text-white">
+            {activeContract === "none" && (
+              <div className="flex justify-center">
+                <h2 className="text-white pt-70 text-5xl font-spaceG">
+                  Connection Terminated
+                </h2>
               </div>
+            )}
+            {activeContract === "projects" && (
+              <AnimatedContent
+                distance={50}
+                direction="vertical"
+                reverse={false}
+                duration={0.8}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1}
+                threshold={0.1}
+                delay={0}
+              >
+                <div className="rounded-2xl bg-green-200">
+                  {projects.map((project) => (
+                    <div className="" key={project.id}>
+                      <h2>{project.title}</h2>
+                      <img src={project.photo}></img>
+                      <small>
+                        {" "}
+                        {project.date_created} - {project.date_updated}{" "}
+                      </small>
+                      <p>{project.description}</p>
+                      <a href={project.website}>Link</a>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedContent>
             )}
             {activeContract === "awards" && (
-              <div className="bg-green-500">
-                {awards.map((award) => (
-                  <div key={award.name}>
-                    <h2>{award.name}</h2>
-                    <h4>{award.awarder}</h4>
-                    <h4>{award.date}</h4>
-                  </div>
-                ))}
-              </div>
+              <AnimatedContent
+                distance={50}
+                direction="vertical"
+                reverse={false}
+                duration={0.8}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1}
+                threshold={0.1}
+                delay={0}
+              >
+                <div className="bg-green-500 rounded-2xl">
+                  {awards.map((award) => (
+                    <div key={award.name}>
+                      <h2>{award.name}</h2>
+                      <h4>{award.awarder}</h4>
+                      <h4>{award.date}</h4>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedContent>
             )}
             {activeContract === "education" && (
-              <div className="bg-green-500">
-                {education.map((edu) => (
-                  <div key={edu.school}>
-                    <h2>{edu.school}</h2>
-                    <h4>{edu.degree}</h4>
-                    <small>
-                      {edu.start_date} - {edu.end_date}
-                    </small>
-                    <p>{edu.info}</p>
-                  </div>
-                ))}
-              </div>
+              <AnimatedContent
+                distance={50}
+                direction="vertical"
+                reverse={false}
+                duration={0.8}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1}
+                threshold={0.1}
+                delay={0}
+              >
+                <div className="bg-green-500 rounded-2xl">
+                  {education.map((edu) => (
+                    <div key={edu.school}>
+                      <h2>{edu.school}</h2>
+                      <h4>{edu.degree}</h4>
+                      <small>
+                        {edu.start_date} - {edu.end_date}
+                      </small>
+                      <p>{edu.info}</p>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedContent>
             )}
             {activeContract === "jobex" && (
-              <div className="bg-green-500">
-                {jobs.map((job) => (
-                  <div className="" key={job.id}>
-                    <button className="text-5xl" onClick={alert}>
-                      {job.title}
-                    </button>
-                    <h4>{job.company}</h4>
-                    <small>
-                      {job.start},{job.end}
-                    </small>
-                    <p>{job.description}</p>
-                  </div>
-                ))}
-              </div>
+              <AnimatedContent
+                distance={50}
+                direction="vertical"
+                reverse={false}
+                duration={0.8}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1}
+                threshold={0.1}
+                delay={0}
+              >
+                <div className="bg-amber-700 rounded-2xl">
+                  {jobs.map((job) => (
+                    <div className="grid place-items-center" key={job.id}>
+                      <button className="text-5xl" onClick={alert}>
+                        {job.title}
+                      </button>
+                      <h4>{job.company}</h4>
+                      <small>
+                        {job.start},{job.end}
+                      </small>
+                      <p>{job.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedContent>
             )}
           </div>
         </main>
       </section>
       <div className="w-full h-25 bg-black"></div>
-      <section id="socials-page">
-        <div id="social-link" className="social-class">
+      <section id="socials-page" className="bg-black">
+        <div id="social-link" className="social-class text-white">
           {socials.map((social) => (
             <div key={social.name}>
               <h2>{social.name}</h2>
