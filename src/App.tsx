@@ -25,13 +25,18 @@ import ShowCard from "./components/sections/cardView.tsx";
 import ShowCardComponent from "./components/sections/cardView.tsx";
 
 function App() {
-  const navStyle = "text-font-nav font-spaceG hover:bg-fuchsia-500 px-4";
+  const navStyle = "text-font-nav font-spaceG hover:bg-[#00F0FF] px-4";
   const [activeContract, setContract] = useState("none");
   return (
     <>
-      <nav className="navbar sticky top-0 bg-pink-600 text-center text-black min-w-50 z-50">
+      <nav className="navbar sticky top-0 bg-[#FF007A] text-center text-black min-w-50 z-50">
         {links.map((link) => (
-          <a key={link.href} href={link.href} className={navStyle}>
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={() => setContract(link.contract)}
+            className={navStyle}
+          >
             {link.text}
           </a>
         ))}
@@ -40,14 +45,14 @@ function App() {
         00ffb3
         */}
       <section
-        className="grid grid-cols-6 grid-rows-9 min-h-screen bg-black"
+        className="grid grid-cols-6 grid-rows-9 min-h-screen bg-[#0B0B0F]"
         id="cover-link"
       >
         <div className="background col-span-5 row-span-9 h-screen w-full absolute z-0">
           <PixelBlast
             variant="triangle"
             pixelSize={4}
-            color="#ff7bbc"
+            color="#00F0FF"
             patternScale={4}
             patternDensity={2}
             pixelSizeJitter={1.3}
@@ -64,7 +69,7 @@ function App() {
             transparent
           />
         </div>
-        <div className="cover-page max-w-3xl text-left col-start-6 col-span-1 row-span-8 bg-pink-600 z-10">
+        <div className="cover-page max-w-3xl text-left col-start-6 col-span-1 row-span-8 bg-[#FF007A] z-10">
           <AnimatedContent
             distance={100}
             direction="horizontal"
@@ -77,12 +82,12 @@ function App() {
             threshold={0.1}
             delay={0}
           >
-            <h1 className="text-black text-8xl font-spaceG text-wrap break-all">
-              Welcome To My Page!
+            <h1 className="text-black text-8xl font-spaceG [writing-mode:vertical-rl] pl-5 text-center">
+              WELCOME TO <br /> MY PAGE!
             </h1>
           </AnimatedContent>
         </div>
-        <div className="max-w-3x1 text-left col-span-4 row-start-8 row-span-1 bg-pink-600  z-10">
+        <div className="max-w-3x1 text-left col-span-4 row-start-8 row-span-1 bg-[#FF007A]  z-10">
           <AnimatedContent
             distance={100}
             direction="horizontal"
@@ -107,13 +112,13 @@ function App() {
           </AnimatedContent>
         </div>
       </section>
-      <div className="bg-black w-full h-15"></div>
-      <section className=" min-h-screen w-full bg-black" id="about-link">
+      <div className="bg-[#0B0B0F] w-full h-15"></div>
+      <section className=" min-h-screen w-full bg-[#0B0B0F]" id="about-link">
         <div className="absolute z-0 opacity-70">
           <PixelBlast
             variant="triangle"
             pixelSize={4}
-            color="#ff7bbc"
+            color="#00F0FF"
             patternScale={2}
             patternDensity={0.25}
             pixelSizeJitter={1.3}
@@ -144,8 +149,8 @@ function App() {
               threshold={0.1}
               delay={0.5}
             >
-              <div className="min-w-full text-white bg-gray-800 h-100 ml-10 rounded-2xl mt-5 overflow-scroll">
-                <h2 className="text-5x1">A little About Me</h2>
+              <div className="min-w-full text-white bg-gray-800 h-100 ml-10 rounded-2xl border-2 border-[#FF007A] mt-5 overflow-scroll">
+                <h2 className="text-5xl">A little About Me</h2>
                 <p className="text-4xl p-2">{meta.intro}</p>
               </div>
             </AnimatedContent>
@@ -165,7 +170,7 @@ function App() {
             >
               <div>
                 <img
-                  className="h-110 w-80 rounded-2xl border-2 border-white"
+                  className="h-110 w-80 rounded-2xl border-2 border-[#FF007A]"
                   src={headshot}
                 ></img>
               </div>
@@ -174,12 +179,12 @@ function App() {
         </main>
       </section>
       <div className="bg-black w-full h-5"></div>
-      <section className="contract-cards h-screen w-full">
+      <section className="contract-cards h-screen w-full" id="contract-nav">
         <div className="absolute z-0 opacity-70">
           <PixelBlast
             variant="triangle"
             pixelSize={4}
-            color="#ff7bbc"
+            color="#00F0FF"
             patternScale={2}
             patternDensity={1}
             pixelSizeJitter={1.3}
@@ -267,7 +272,7 @@ function App() {
                   </div>
                 }
                 gridSize={20}
-                pixelColor="#ffffff"
+                pixelColor="#FF007A"
                 once={false}
                 animationStepDuration={0.4}
                 className="custom-pixel-card"
@@ -328,8 +333,8 @@ function App() {
                     </SpecularButton>
                   </div>
                 }
-                gridSize={8}
-                pixelColor="#ffffff"
+                gridSize={20}
+                pixelColor="#FF007A"
                 once={false}
                 animationStepDuration={0.4}
                 className="custom-pixel-card"
@@ -390,8 +395,8 @@ function App() {
                     </SpecularButton>
                   </div>
                 }
-                gridSize={8}
-                pixelColor="#eb4597"
+                gridSize={20}
+                pixelColor="#FF007A"
                 once={false}
                 animationStepDuration={0.4}
                 className="custom-pixel-card"
@@ -452,15 +457,15 @@ function App() {
                     </SpecularButton>
                   </div>
                 }
-                gridSize={8}
-                pixelColor="#ffffff"
+                gridSize={20}
+                pixelColor="#FF007A"
                 once={false}
                 animationStepDuration={0.4}
                 className="custom-pixel-card"
               />
             </AnimatedContent>
           </div>
-          <div className="col-start-3 col-span-2 row-span-2 relative z-10 w-full h-full bg-black rounded-2xl border border-white font-spaceG text-white">
+          <div className="col-start-3 col-span-2 row-span-2 relative z-10 w-full h-full bg-black rounded-2xl border-2 border-[#FF007A] font-spaceG text-white">
             {activeContract === "none" && (
               <div className="flex justify-center">
                 <h2 className="text-white pt-70 text-5xl font-spaceG">
@@ -581,7 +586,7 @@ function App() {
         </main>
       </section>
       <div className="w-full h-25 bg-black"></div>
-      <section id="socials-page" className="bg-black">
+      <section id="socials-page" className="bg-[#0B0B0F]">
         <div id="social-link" className="social-class text-white">
           {socials.map((social) => (
             <div key={social.name}>
@@ -591,9 +596,6 @@ function App() {
             </div>
           ))}
         </div>
-      </section>
-      <section id="about-link" className="about-me">
-        <div className="hero"></div>
       </section>
     </>
   );
