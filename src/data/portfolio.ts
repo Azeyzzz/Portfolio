@@ -79,7 +79,8 @@ export const projects: Project[] = [
     date_updated: "June 2026",
     photo: "photo",
     link: "https://github.com/Azeyzzz/Zaeya-Portfolio",
-    description: "short description",
+    description:
+      "The first personal portfolio I created using HTML, CSS and Javascript code that I learned in a Web development class. I was able to build off a previous project that I had completed in that class where I made a professional portfolio for a client.",
     website: "https://zaeyadebenedetti.com/",
   },
   {
@@ -89,7 +90,8 @@ export const projects: Project[] = [
     date_updated: "June 2026",
     photo: "photo",
     link: "https://github.com/Azeyzzz/to_day-dashoard",
-    description: "short description",
+    description:
+      "A dashboard project I created with the help of LLMs. I wanted to create a dashboard I could use to keep track of daily tasks, reminders, and a post it note board.",
     website: "https://today.zaeyadebenedetti.com/",
   },
   {
@@ -99,7 +101,8 @@ export const projects: Project[] = [
     date_updated: "Nov 2025",
     photo: "photo",
     link: "https://github.com/Azeyzzz/Zaeya-New-Portfolio",
-    description: "short description",
+    description:
+      "A semester long project in which I created a portfolio tailored towards my client. My client wanted a professional portfolio that recruiters could use to find out more about my client.",
     website:
       "https://webpages.charlotte.edu/ddebene1/Melanie-Portfolio/home.html",
   },

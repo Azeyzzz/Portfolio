@@ -136,6 +136,15 @@ function App() {
           />
         </div>
         <main className="grid grid-cols-10 grid-rows-6">
+          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-75 max-w-75 max-h-15 break-all relative z-10 bg-[#FF007A] col-span-1">
+            <DecryptedText
+              text={"ABOUT ME"}
+              animateOn="view"
+              clickMode="once"
+              speed={50}
+              maxIterations={20}
+            />
+          </h2>
           <div className="relative z-10 col-span-6 col-start-1 row-span-4 row-start-2">
             <AnimatedContent
               distance={100}
@@ -149,8 +158,7 @@ function App() {
               threshold={0.1}
               delay={0.5}
             >
-              <div className="min-w-full text-white bg-gray-800 h-100 ml-10 rounded-2xl border-2 border-[#FF007A] mt-5 overflow-scroll">
-                <h2 className="text-5xl">A little About Me</h2>
+              <div className="min-w-full text-white bg-[#0B0B0F] h-100 ml-10 rounded-2xl border-2 border-[#FF007A] mt-5 overflow-scroll">
                 <p className="text-4xl p-2">{meta.intro}</p>
               </div>
             </AnimatedContent>
@@ -178,8 +186,11 @@ function App() {
           </div>
         </main>
       </section>
-      <div className="bg-black w-full h-5"></div>
-      <section className="contract-cards h-screen w-full" id="contract-nav">
+      <div className="bg-[#0B0B0F] w-full h-10"></div>
+      <section
+        className="contract-cards h-screen w-full bg-[#0B0B0F]"
+        id="contract-nav"
+      >
         <div className="absolute z-0 opacity-70">
           <PixelBlast
             variant="triangle"
@@ -213,8 +224,14 @@ function App() {
         threshold={0.1}
         delay={0}
       ></AnimatedContent> */}
-        <h1 className="text-white text-8xl font-spaceG text-wrap break-all bg-black pb-5">
-          Experiences
+        <h1 className="text-black text-6xl font-spaceG text-wrap min-w-95 max-w-95 break-all relative z-10 bg-[#FF007A] mb-5">
+          <DecryptedText
+            text={"EXPERIENCES"}
+            animateOn="view"
+            clickMode="once"
+            speed={50}
+            maxIterations={20}
+          />
         </h1>
         <main className="grid grid-cols-4 grid-rows-2 bg-black gap-5 pr-5">
           <div className="">
@@ -245,30 +262,34 @@ function App() {
                 secondContent={
                   <div
                     id="exp-link"
-                    className="exp-class w-full h-full bg-black overflow-scroll relative z-10 pointer-events-auto "
+                    className="exp-class w-full h-full overflow-scroll relative z-10 pointer-events-auto bg-[#0B0B0F]"
                   >
-                    <h2>My Education</h2>
-                    <SpecularButton
-                      size="lg"
-                      radius={18}
-                      tint="#ffffff"
-                      tintOpacity={0}
-                      blur={0}
-                      textColor="#f5f5f5"
-                      lineColor="#ffffff"
-                      baseColor="#525252"
-                      intensity={1}
-                      shineSize={10}
-                      shineFade={40}
-                      thickness={1}
-                      speed={0.35}
-                      followMouse
-                      proximity={250}
-                      autoAnimate={false}
-                      onClick={() => setContract("jobex")}
-                    >
-                      Education
-                    </SpecularButton>
+                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5">
+                      MY EDUCATION
+                    </h2>
+                    <div className="text-center pt-20">
+                      <SpecularButton
+                        size="lg"
+                        radius={18}
+                        tint="#ffffff"
+                        tintOpacity={0}
+                        blur={0}
+                        textColor="#f5f5f5"
+                        lineColor="#FF007A"
+                        baseColor="#525252"
+                        intensity={1}
+                        shineSize={10}
+                        shineFade={40}
+                        thickness={1}
+                        speed={0.35}
+                        followMouse
+                        proximity={250}
+                        autoAnimate={false}
+                        onClick={() => setContract("jobex")}
+                      >
+                        View Education
+                      </SpecularButton>
+                    </div>
                   </div>
                 }
                 gridSize={20}
@@ -309,28 +330,32 @@ function App() {
                     id="exp-link"
                     className="exp-class w-full h-full bg-black overflow-scroll relative z-10 pointer-events-auto "
                   >
-                    <h2>Professional Experience</h2>
-                    <SpecularButton
-                      size="lg"
-                      radius={18}
-                      tint="#ffffff"
-                      tintOpacity={0}
-                      blur={0}
-                      textColor="#f5f5f5"
-                      lineColor="#ffffff"
-                      baseColor="#525252"
-                      intensity={1}
-                      shineSize={10}
-                      shineFade={40}
-                      thickness={1}
-                      speed={0.35}
-                      followMouse
-                      proximity={250}
-                      autoAnimate={false}
-                      onClick={() => setContract("education")}
-                    >
-                      Professional Experience
-                    </SpecularButton>
+                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5">
+                      PROFESSIONAL EXPERIENCE
+                    </h2>
+                    <div className="text-center pt-15">
+                      <SpecularButton
+                        size="lg"
+                        radius={18}
+                        tint="#ffffff"
+                        tintOpacity={0}
+                        blur={0}
+                        textColor="#f5f5f5"
+                        lineColor="#ffffff"
+                        baseColor="#525252"
+                        intensity={1}
+                        shineSize={10}
+                        shineFade={40}
+                        thickness={1}
+                        speed={0.35}
+                        followMouse
+                        proximity={250}
+                        autoAnimate={false}
+                        onClick={() => setContract("education")}
+                      >
+                        Professional Experience
+                      </SpecularButton>
+                    </div>
                   </div>
                 }
                 gridSize={20}
@@ -369,30 +394,34 @@ function App() {
                 secondContent={
                   <div
                     id="exp-link"
-                    className="exp-class w-full h-full bg-black overflow-scroll relative z-10 pointer-events-auto "
+                    className="exp-class w-full h-full bg-black overflow-scroll relative z-10 pointer-events-auto"
                   >
-                    <h2>My Projects</h2>
-                    <SpecularButton
-                      size="lg"
-                      radius={18}
-                      tint="#ffffff"
-                      tintOpacity={0}
-                      blur={0}
-                      textColor="#f5f5f5"
-                      lineColor="#ffffff"
-                      baseColor="#525252"
-                      intensity={1}
-                      shineSize={10}
-                      shineFade={40}
-                      thickness={1}
-                      speed={0.35}
-                      followMouse
-                      proximity={250}
-                      autoAnimate={false}
-                      onClick={() => setContract("projects")}
-                    >
-                      Projects
-                    </SpecularButton>
+                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5">
+                      MY PROJECTS
+                    </h2>
+                    <div className="text-center pt-20">
+                      <SpecularButton
+                        size="lg"
+                        radius={18}
+                        tint="#ffffff"
+                        tintOpacity={0}
+                        blur={0}
+                        textColor="#f5f5f5"
+                        lineColor="#ffffff"
+                        baseColor="#525252"
+                        intensity={1}
+                        shineSize={10}
+                        shineFade={40}
+                        thickness={1}
+                        speed={0.35}
+                        followMouse
+                        proximity={250}
+                        autoAnimate={false}
+                        onClick={() => setContract("projects")}
+                      >
+                        Projects
+                      </SpecularButton>
+                    </div>
                   </div>
                 }
                 gridSize={20}
@@ -433,28 +462,32 @@ function App() {
                     id="exp-link"
                     className="exp-class w-full h-full bg-black overflow-scroll relative z-10 pointer-events-auto "
                   >
-                    <h2>My Awards</h2>
-                    <SpecularButton
-                      size="lg"
-                      radius={18}
-                      tint="#ffffff"
-                      tintOpacity={0}
-                      blur={0}
-                      textColor="#f5f5f5"
-                      lineColor="#ffffff"
-                      baseColor="#525252"
-                      intensity={1}
-                      shineSize={10}
-                      shineFade={40}
-                      thickness={1}
-                      speed={0.35}
-                      followMouse
-                      proximity={250}
-                      autoAnimate={false}
-                      onClick={() => setContract("awards")}
-                    >
-                      Awards
-                    </SpecularButton>
+                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5">
+                      MY AWARDS
+                    </h2>
+                    <div className="text-center pt-20">
+                      <SpecularButton
+                        size="lg"
+                        radius={18}
+                        tint="#ffffff"
+                        tintOpacity={0}
+                        blur={0}
+                        textColor="#f5f5f5"
+                        lineColor="#ffffff"
+                        baseColor="#525252"
+                        intensity={1}
+                        shineSize={10}
+                        shineFade={40}
+                        thickness={1}
+                        speed={0.35}
+                        followMouse
+                        proximity={250}
+                        autoAnimate={false}
+                        onClick={() => setContract("awards")}
+                      >
+                        Awards
+                      </SpecularButton>
+                    </div>
                   </div>
                 }
                 gridSize={20}
@@ -486,9 +519,12 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="rounded-2xl bg-green-200">
+                <div className="rounded-2xl pb-5">
                   {projects.map((project) => (
-                    <div className="" key={project.id}>
+                    <div
+                      className="bg-green-200 rounded-2xl mb-5"
+                      key={project.id}
+                    >
                       <h2>{project.title}</h2>
                       <img src={project.photo}></img>
                       <small>
@@ -515,9 +551,15 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="bg-green-500 rounded-2xl">
+                <div className="bg-black rounded-2xl">
+                  <h1 className="bg-[#FF007A] text-5xl rounded-2xl items-center">
+                    Awards
+                  </h1>
                   {awards.map((award) => (
-                    <div key={award.name}>
+                    <div
+                      className="border-2 border-amber-200 bg-blue-300 mb-5 rounded-2xl"
+                      key={award.name}
+                    >
                       <h2>{award.name}</h2>
                       <h4>{award.awarder}</h4>
                       <h4>{award.date}</h4>
@@ -539,7 +581,7 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="bg-green-500 rounded-2xl">
+                <div className="bg-green-500 rounded-2xl pb-5">
                   {education.map((edu) => (
                     <div key={edu.school}>
                       <h2>{edu.school}</h2>
@@ -566,7 +608,7 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="bg-amber-700 rounded-2xl">
+                <div className="">
                   {jobs.map((job) => (
                     <div className="grid place-items-center" key={job.id}>
                       <button className="text-5xl" onClick={alert}>
@@ -585,9 +627,12 @@ function App() {
           </div>
         </main>
       </section>
-      <div className="w-full h-25 bg-black"></div>
+      <div className="w-full h-15 bg-[#0B0B0F]"></div>
       <section id="socials-page" className="bg-[#0B0B0F]">
         <div id="social-link" className="social-class text-white">
+          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-55 max-w-55 break-all relative z-10 bg-[#FF007A] mb-5">
+            Socials
+          </h2>
           {socials.map((social) => (
             <div key={social.name}>
               <h2>{social.name}</h2>
