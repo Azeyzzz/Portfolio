@@ -285,7 +285,7 @@ function App() {
                         followMouse
                         proximity={250}
                         autoAnimate={false}
-                        onClick={() => setContract("jobex")}
+                        onClick={() => setContract("education")}
                       >
                         View Education
                       </SpecularButton>
@@ -351,7 +351,7 @@ function App() {
                         followMouse
                         proximity={250}
                         autoAnimate={false}
-                        onClick={() => setContract("education")}
+                        onClick={() => setContract("jobex")}
                       >
                         Professional Experience
                       </SpecularButton>
@@ -498,7 +498,7 @@ function App() {
               />
             </AnimatedContent>
           </div>
-          <div className="col-start-3 col-span-2 row-span-2 relative z-10 w-full h-full bg-black rounded-2xl border-2 border-[#FF007A] font-spaceG text-white">
+          <div className="col-start-3 col-span-2 row-span-2 relative z-10 w-full max-h-screen bg-black rounded-2xl border-2 border-[#FF007A] font-spaceG text-white overflow-scroll">
             {activeContract === "none" && (
               <div className="flex justify-center">
                 <h2 className="text-white pt-70 text-5xl font-spaceG">
@@ -519,10 +519,13 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="rounded-2xl pb-5">
+                <div className="flex flex-col h-full gap-5 rounded-2xl">
+                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
+                    Projects
+                  </h2>
                   {projects.map((project) => (
                     <div
-                      className="bg-green-200 rounded-2xl mb-5"
+                      className="bg-[#FF007A] rounded-2xl mb-5 flex-1"
                       key={project.id}
                     >
                       <h2>{project.title}</h2>
@@ -551,13 +554,13 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="bg-black rounded-2xl">
-                  <h1 className="bg-[#FF007A] text-5xl rounded-2xl items-center">
+                <div className="flex flex-col h-full gap-5 rounded-2xl">
+                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
                     Awards
-                  </h1>
+                  </h2>
                   {awards.map((award) => (
                     <div
-                      className="border-2 border-amber-200 bg-blue-300 mb-5 rounded-2xl"
+                      className="border-2 border-amber-200 bg-[#FF007A] mb-5 rounded-2xl flex-1 h-full"
                       key={award.name}
                     >
                       <h2>{award.name}</h2>
@@ -581,10 +584,16 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="bg-green-500 rounded-2xl pb-5">
+                <div className="flex flex-col h-full gap-5 rounded-2xl">
+                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
+                    Education
+                  </h2>
                   {education.map((edu) => (
-                    <div key={edu.school}>
-                      <h2>{edu.school}</h2>
+                    <div
+                      className={`rounded-2xl ${edu.theme} mb-5 flex-1 h-full`}
+                      key={edu.school}
+                    >
+                      <h2 className="text-3xl">{edu.school}</h2>
                       <h4>{edu.degree}</h4>
                       <small>
                         {edu.start_date} - {edu.end_date}
@@ -608,9 +617,15 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="">
+                <div className="flex flex-col h-full gap-5 rounded-2xl">
+                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
+                    Experience
+                  </h2>
                   {jobs.map((job) => (
-                    <div className="grid place-items-center" key={job.id}>
+                    <div
+                      className={`rounded-2xl ${job.theme} mb-5 flex-1 h-full`}
+                      key={job.id}
+                    >
                       <button className="text-5xl" onClick={alert}>
                         {job.title}
                       </button>

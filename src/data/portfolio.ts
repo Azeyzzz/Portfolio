@@ -8,6 +8,7 @@ export type Education = {
   end_date?: string; // can be null to set to current or set to future
   info: string;
   photo?: string;
+  theme: string;
 };
 export type Project = {
   id: string;
@@ -30,6 +31,7 @@ export type JobEx = {
   description: string;
   skills: string;
   logo: string;
+  theme: string;
 };
 
 export type Cert_Award = {
@@ -116,6 +118,7 @@ export const education: Education[] = [
     start_date: "Aug 2023",
     end_date: "May 2027",
     info: "info here",
+    theme: "bg-[#005035]",
   },
   {
     school: "University of North Carolina at Charlote",
@@ -124,7 +127,8 @@ export const education: Education[] = [
     gpa: 0,
     start_date: "Aug 2023",
     end_date: "May 2027",
-    info: "info here",
+    info: "Relevant Courses: Prin Infra and Sec, Software Engineering",
+    theme: "bg-[#005035]",
   },
 ];
 export const jobs: JobEx[] = [
@@ -138,6 +142,7 @@ export const jobs: JobEx[] = [
     description: "Job description here",
     skills: "skills here",
     logo: "photo url here",
+    theme: "bg-[#00F0FF]",
   },
   {
     id: 2,
@@ -149,6 +154,7 @@ export const jobs: JobEx[] = [
     description: "Job description here",
     skills: "skills here",
     logo: "photo url here",
+    theme: "bg-[#C41230]",
   },
   {
     id: 3,
@@ -160,6 +166,7 @@ export const jobs: JobEx[] = [
     description: "Job description here",
     skills: "skills here",
     logo: "photo url here",
+    theme: "bg-[#EB1700]",
   },
   {
     id: 4,
@@ -171,5 +178,6 @@ export const jobs: JobEx[] = [
     description: "Job description here",
     skills: "skills here",
     logo: "photo url here",
+    theme: "bg-[#0AAD05]",
   },
 ];
