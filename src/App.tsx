@@ -1,16 +1,11 @@
 import { useState } from "react";
 import headshot from "./assets/photo_cmu.jpg";
-import charlotte from "./assets/charlotte_logo.svg";
 import filler from "./assets/pixel-filler.png";
-import cmu from "./assets/cmu_seal.png";
 import DecryptedText from "./components/ui/DecryptedText";
-import FaultyTerminal from "./components/layout/FaultyTerminal.tsx";
 import PixelTransition from "./components/sections/PixelTransition.tsx";
-import cardView from "./components/sections/cardView.tsx";
 import AnimatedContent from "./components/ui/AnimatedContent.tsx";
 import PixelBlast from "./components/layout/PixelBlast.tsx";
 import SpecularButton from "./components/ui/SpecButton.tsx";
-import PixelSnow from "./components/layout/PixelSnow.tsx";
 import "./App.css";
 import {
   meta,
@@ -21,8 +16,6 @@ import {
   socials,
 } from "./data/portfolio.ts";
 import { links } from "./data/navbar.ts";
-import ShowCard from "./components/sections/cardView.tsx";
-import ShowCardComponent from "./components/sections/cardView.tsx";
 
 function App() {
   const navStyle = "text-font-nav font-spaceG hover:bg-[#00F0FF] px-4";
@@ -158,7 +151,7 @@ function App() {
               threshold={0.1}
               delay={0.5}
             >
-              <div className="min-w-full text-white bg-[#0B0B0F] h-100 ml-10 rounded-2xl border-2 border-[#FF007A] mt-5 overflow-scroll">
+              <div className="min-w-full text-black bg-[#00F0FF] h-100 ml-10 rounded-2xl border-2 border-[#FF007A] mt-5 overflow-scroll">
                 <p className="text-4xl p-2">{meta.intro}</p>
               </div>
             </AnimatedContent>
@@ -264,7 +257,7 @@ function App() {
                     id="exp-link"
                     className="exp-class w-full h-full overflow-scroll relative z-10 pointer-events-auto bg-[#0B0B0F]"
                   >
-                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5">
+                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5 text-black">
                       MY EDUCATION
                     </h2>
                     <div className="text-center pt-20">
@@ -330,7 +323,7 @@ function App() {
                     id="exp-link"
                     className="exp-class w-full h-full bg-black overflow-scroll relative z-10 pointer-events-auto "
                   >
-                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5">
+                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5 text-black">
                       PROFESSIONAL EXPERIENCE
                     </h2>
                     <div className="text-center pt-15">
@@ -341,7 +334,7 @@ function App() {
                         tintOpacity={0}
                         blur={0}
                         textColor="#f5f5f5"
-                        lineColor="#ffffff"
+                        lineColor="#FF007A"
                         baseColor="#525252"
                         intensity={1}
                         shineSize={10}
@@ -396,7 +389,7 @@ function App() {
                     id="exp-link"
                     className="exp-class w-full h-full bg-black overflow-scroll relative z-10 pointer-events-auto"
                   >
-                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5">
+                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5 text-black">
                       MY PROJECTS
                     </h2>
                     <div className="text-center pt-20">
@@ -407,7 +400,7 @@ function App() {
                         tintOpacity={0}
                         blur={0}
                         textColor="#f5f5f5"
-                        lineColor="#ffffff"
+                        lineColor="#FF007A"
                         baseColor="#525252"
                         intensity={1}
                         shineSize={10}
@@ -462,7 +455,7 @@ function App() {
                     id="exp-link"
                     className="exp-class w-full h-full bg-black overflow-scroll relative z-10 pointer-events-auto "
                   >
-                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5">
+                    <h2 className="bg-[#FF007A] text-4xl text-center pt-5 pb-5 text-black">
                       MY AWARDS
                     </h2>
                     <div className="text-center pt-20">
@@ -473,7 +466,7 @@ function App() {
                         tintOpacity={0}
                         blur={0}
                         textColor="#f5f5f5"
-                        lineColor="#ffffff"
+                        lineColor="#FF007A"
                         baseColor="#525252"
                         intensity={1}
                         shineSize={10}
@@ -482,7 +475,7 @@ function App() {
                         speed={0.35}
                         followMouse
                         proximity={250}
-                        autoAnimate={false}
+                        autoAnimate={true}
                         onClick={() => setContract("awards")}
                       >
                         Awards
@@ -498,10 +491,10 @@ function App() {
               />
             </AnimatedContent>
           </div>
-          <div className="col-start-3 col-span-2 row-span-2 relative z-10 w-full max-h-screen bg-black rounded-2xl border-2 border-[#FF007A] font-spaceG text-white overflow-scroll">
+          <div className="col-start-3 col-span-2 row-span-2 relative z-10 w-full max-h-screen bg-black rounded-2xl border-2 border-[#FF007A] font-spaceG text-black overflow-scroll">
             {activeContract === "none" && (
               <div className="flex justify-center">
-                <h2 className="text-white pt-70 text-5xl font-spaceG">
+                <h2 className="text-white pt-70 text-5xl font-spaceG font-bold">
                   Connection Terminated
                 </h2>
               </div>
@@ -520,12 +513,12 @@ function App() {
                 delay={0}
               >
                 <div className="flex flex-col h-full gap-5 rounded-2xl">
-                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
+                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1 text-white">
                     Projects
                   </h2>
                   {projects.map((project) => (
                     <div
-                      className="bg-[#FF007A] rounded-2xl mb-5 flex-1"
+                      className="bg-[#00F0FF] border-[#FF007A] border-2 rounded-2xl mb-5 flex-1"
                       key={project.id}
                     >
                       <h2>{project.title}</h2>
@@ -554,18 +547,28 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="flex flex-col h-full gap-5 rounded-2xl">
+                <div className="flex flex-col h-full max-h-10 gap-5 rounded-2xl">
                   <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
                     Awards
                   </h2>
                   {awards.map((award) => (
                     <div
-                      className="border-2 border-amber-200 bg-[#FF007A] mb-5 rounded-2xl flex-1 h-full"
+                      className="border-2 bg-[#00F0FF] border-[#FF007A] mb-5 rounded-2xl flex-1 h-full grid grid-cols-4 grid-rows-4 p-2"
                       key={award.name}
                     >
-                      <h2>{award.name}</h2>
-                      <h4>{award.awarder}</h4>
-                      <h4>{award.date}</h4>
+                      <h2 className="row-span-2 col-start-1 row-start-1 col-span-3 text-4xl">
+                        {award.name}
+                      </h2>
+                      <img
+                        className="col-start-4 row-span-4"
+                        src={award.badge}
+                      ></img>
+                      <h4 className="text-xl row-start-3 row-span-1 col-start-1">
+                        {award.awarder}
+                      </h4>
+                      <h4 className="text-xl row-start-4 row-span-1 col-start-1 italic">
+                        {award.date}
+                      </h4>
                     </div>
                   ))}
                 </div>
@@ -584,20 +587,22 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="flex flex-col h-full gap-5 rounded-2xl">
+                <div className="flex flex-col h-full gap-5 rounded-2xl font-spaceG">
                   <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
                     Education
                   </h2>
                   {education.map((edu) => (
                     <div
-                      className={`rounded-2xl ${edu.theme} mb-5 flex-1 h-full`}
+                      className={`rounded-2xl ${edu.theme} border-[#FF007A] border-2 mb-5 flex-1 h-full p-2`}
                       key={edu.school}
                     >
-                      <h2 className="text-3xl">{edu.school}</h2>
-                      <h4>{edu.degree}</h4>
-                      <small>
+                      <h2 className="text-3xl font-spaceG">{edu.school}</h2>
+                      <h4>Degree: {edu.degree}</h4>
+                      <small className="italic">
                         {edu.start_date} - {edu.end_date}
                       </small>
+                      <br></br>
+                      <small> GPA: {edu.gpa}</small>
                       <p>{edu.info}</p>
                     </div>
                   ))}
@@ -617,23 +622,22 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="flex flex-col h-full gap-5 rounded-2xl">
-                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
+                <div className="flex flex-col h-full max-h-10 gap-5 rounded-2xl">
+                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1 font-spaceG">
                     Experience
                   </h2>
                   {jobs.map((job) => (
                     <div
-                      className={`rounded-2xl ${job.theme} mb-5 flex-1 h-full`}
+                      className={`rounded-2xl ${job.theme} border-[#FF007A] border-2 p-2 mb-5 flex-1 h-full font-spaceG`}
                       key={job.id}
                     >
-                      <button className="text-5xl" onClick={alert}>
-                        {job.title}
-                      </button>
-                      <h4>{job.company}</h4>
-                      <small>
-                        {job.start},{job.end}
-                      </small>
-                      <p>{job.description}</p>
+                      <h2 className="text-4xl">{job.title}</h2>
+                      <h3 className="text-2xl">{job.company}</h3>
+                      <h4 className="text-x1">
+                        {job.start} - {job.end}
+                      </h4>
+                      <p className="pl-1">{job.description}</p>
+                      <small className="pl-1">Skills: {job.skills}</small>
                     </div>
                   ))}
                 </div>
@@ -645,16 +649,22 @@ function App() {
       <div className="w-full h-15 bg-[#0B0B0F]"></div>
       <section id="socials-page" className="bg-[#0B0B0F]">
         <div id="social-link" className="social-class text-white">
-          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-55 max-w-55 break-all relative z-10 bg-[#FF007A] mb-5">
+          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-55 max-w-55 break-all relative z-10 bg-[#FF007A] mb-5 mr-5">
             Socials
           </h2>
-          {socials.map((social) => (
-            <div key={social.name}>
-              <h2>{social.name}</h2>
-              <img src={social.logo}></img>
-              <h4>{social.link}</h4>
-            </div>
-          ))}
+          <div className="grid grid-cols-2 grid-rows-2 p-5 gap-5">
+            {socials.map((social) => (
+              <div
+                className="p-2 border-[#FF007A] border-2 rounded-2xl "
+                key={social.name}
+              >
+                <h2>{social.name}</h2>
+                <img src={social.logo}></img>
+                <h4>{social.link}</h4>
+              </div>
+            ))}
+          </div>
+          <h3 className="pl-1 pb-1">Created by Zaeya DeBenedetti 2026</h3>
         </div>
       </section>
     </>
