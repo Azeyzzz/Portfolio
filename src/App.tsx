@@ -6,6 +6,8 @@ import PixelTransition from "./components/sections/PixelTransition.tsx";
 import AnimatedContent from "./components/ui/AnimatedContent.tsx";
 import PixelBlast from "./components/layout/PixelBlast.tsx";
 import SpecularButton from "./components/ui/SpecButton.tsx";
+import Carousel from "./components/sections/carousel.tsx";
+import type { CarouselItem } from "./components/sections/carousel.tsx";
 import "./App.css";
 import {
   meta,
@@ -16,6 +18,26 @@ import {
   socials,
 } from "./data/portfolio.ts";
 import { links } from "./data/navbar.ts";
+const slides: CarouselItem[] = [
+  {
+    id: 1,
+    title: "Fast",
+    description: "Blazing fast performance out of the box.",
+    icon: "⚡",
+  },
+  {
+    id: 2,
+    title: "Flexible",
+    description: "Customize everything to fit your needs.",
+    icon: "🔧",
+  },
+  {
+    id: 3,
+    title: "Reliable",
+    description: "Built to handle whatever you throw at it.",
+    icon: "🛡️",
+  },
+];
 
 function App() {
   const navStyle = "text-font-nav font-spaceG hover:bg-[#00F0FF] px-4";
@@ -513,7 +535,7 @@ function App() {
                 delay={0}
               >
                 <div className="flex flex-col h-full gap-5 rounded-2xl">
-                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1 text-white">
+                  <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1 text-black">
                     Projects
                   </h2>
                   {projects.map((project) => (
@@ -591,21 +613,29 @@ function App() {
                   <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
                     Education
                   </h2>
-                  {education.map((edu) => (
-                    <div
-                      className={`rounded-2xl ${edu.theme} border-[#FF007A] border-2 mb-5 flex-1 h-full p-2`}
-                      key={edu.school}
-                    >
-                      <h2 className="text-3xl font-spaceG">{edu.school}</h2>
-                      <h4>Degree: {edu.degree}</h4>
-                      <small className="italic">
-                        {edu.start_date} - {edu.end_date}
-                      </small>
-                      <br></br>
-                      <small> GPA: {edu.gpa}</small>
-                      <p>{edu.info}</p>
-                    </div>
-                  ))}
+                  <div
+                    className={`rounded-2xl border-[#FF007A] border-2 h-full flex-1 min-w-full font-spaceG`}
+                  >
+                    <Carousel
+                      items={education.map(
+                        (edu): CarouselItem => ({
+                          id: edu.id,
+                          title: edu.school,
+                          degree: edu.degree,
+                          start: edu.start_date,
+                          gpa: edu.gpa,
+                          end: edu.end_date,
+                          description: edu.info,
+                        }),
+                      )}
+                      baseWidth={612}
+                      autoplay
+                      autoplayDelay={3000}
+                      pauseOnHover
+                      loop
+                      round={false}
+                    />
+                  </div>
                 </div>
               </AnimatedContent>
             )}
@@ -626,20 +656,29 @@ function App() {
                   <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1 font-spaceG">
                     Experience
                   </h2>
-                  {jobs.map((job) => (
-                    <div
-                      className={`rounded-2xl ${job.theme} border-[#FF007A] border-2 p-2 mb-5 flex-1 h-full font-spaceG`}
-                      key={job.id}
-                    >
-                      <h2 className="text-4xl">{job.title}</h2>
-                      <h3 className="text-2xl">{job.company}</h3>
-                      <h4 className="text-x1">
-                        {job.start} - {job.end}
-                      </h4>
-                      <p className="pl-1">{job.description}</p>
-                      <small className="pl-1">Skills: {job.skills}</small>
-                    </div>
-                  ))}
+                  <div
+                    className={`rounded-2xl border-[#FF007A] border-2 h-full flex-1 min-w-full font-spaceG`}
+                  >
+                    <Carousel
+                      items={jobs.map(
+                        (job): CarouselItem => ({
+                          id: job.id,
+                          title: job.title,
+                          company: job.company,
+                          start: job.start,
+                          end: job.end,
+                          description: job.description,
+                          skills: job.skills,
+                        }),
+                      )}
+                      baseWidth={612}
+                      autoplay
+                      autoplayDelay={3000}
+                      pauseOnHover
+                      loop
+                      round={false}
+                    />
+                  </div>
                 </div>
               </AnimatedContent>
             )}

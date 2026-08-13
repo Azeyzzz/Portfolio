@@ -1,5 +1,6 @@
 // Type Constructors for data
 export type Education = {
+  id: number;
   school: string;
   location: string;
   degree: string;
@@ -120,6 +121,7 @@ export const projects: Project[] = [
 ];
 export const education: Education[] = [
   {
+    id: 1,
     school: "University of North Carolina at Charlote",
     location: "Charlotte",
     degree: "Computer Science B.S.",
@@ -130,6 +132,7 @@ export const education: Education[] = [
     theme: "bg-[#00F0FF]",
   },
   {
+    id: 2,
     school: "University of North Carolina at Charlote",
     location: "Charlotte",
     degree: "MS Cybersecurity",
