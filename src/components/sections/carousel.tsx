@@ -7,12 +7,15 @@ import type { JSX, ReactNode } from "react";
 // replace icons with your own if needed
 export interface CarouselItem {
   title: string;
-  description: string;
+  description?: string;
   id: number;
   company?: string;
+  awarder?: string;
   degree?: string;
   start?: string;
   end?: string;
+  date?: string;
+  date_update?: string;
   gpa?: number;
   skills?: string[];
   photo?: string;
@@ -80,15 +83,23 @@ function CarouselItem({
     >
       {item.icon && (
         <div className={`${round ? "p-0 m-0" : "mb-4 p-5"}`}>
-          <span className="flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#120F17]">
-            {item.icon}
-          </span>
+          <img
+            className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-[#120F17]"
+            src={item.icon}
+          ></img>
         </div>
       )}
       <div className="p-5 font-spaceG">
         <div className="mb-1 font-black font-spaceG text-4xl text-black">
           {item.title}
         </div>
+        {item.icon && (
+          <img className="flex h-[50px] w-[50px]" src={item.icon}></img>
+        )}
+        {item.photo && <img className="" src={item.photo}></img>}
+        {item.awarder && (
+          <h3 className="text-2xl text-black italic">{item.awarder}</h3>
+        )}
         {item.company && (
           <h3 className="text-2xl text-black">{item.company}</h3>
         )}
@@ -100,10 +111,23 @@ function CarouselItem({
             {item.start} - {item.end}
           </h4>
         )}
+        {item.date && <h4 className="text-x1 text-black">{item.date}</h4>}
+        {item.date_update && (
+          <h4 className="text-x1 text-black">Updated: {item.date_update}</h4>
+        )}
         {item.gpa && <h3 className="text-sm text-black">GPA: {item.gpa}</h3>}
-        <p className="text-sm text-black">{item.description}</p>
+        {item.description && (
+          <p className="text-base text-black pt-1 pb-1">
+            Description: {item.description}
+          </p>
+        )}
+        {item.link && (
+          <a className="text-xl text-black" href={item.link}>
+            here
+          </a>
+        )}
         {item.skills && (
-          <small className="text-black">Skills: {item.skills}</small>
+          <small className="text-xl text-black">Skills: {item.skills}</small>
         )}
       </div>
     </motion.div>

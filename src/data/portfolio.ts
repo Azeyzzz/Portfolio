@@ -12,7 +12,7 @@ export type Education = {
   theme: string;
 };
 export type Project = {
-  id: string;
+  id: number;
   title: string;
   date_created: string;
   date_updated: string;
@@ -40,11 +40,14 @@ export type Cert_Award = {
   awarder: string;
   date: string;
   badge: string;
+  id: number;
 };
 export type Social = {
   name: string;
   logo: string;
-  link: string;
+  link?: string;
+  button?: string;
+  email?: string;
 };
 // --------------------------------------------------------------
 //  Actual Data
@@ -61,18 +64,21 @@ export const awards: Cert_Award[] = [
     awarder: "Carnegie Mellon University",
     date: "August 2026",
     badge: "./src/assets/heinz-itlab-badge.png",
+    id: 1,
   },
   {
     name: "Google Cybersecurity Professional Certificate v2",
     awarder: "Coursera",
     date: "June 2026",
     badge: "./src/assets/google-cyber-prof-badge.png",
+    id: 2,
   },
   {
     name: "Chancellors List Fall 2023 - Spring 2026",
     awarder: "University of North Carolina at Charlotte",
     date: "2023-2026",
     badge: "./src/assets/chancellor-list-s26.png",
+    id: 3,
   },
 ];
 export const socials: Social[] = [
@@ -80,12 +86,23 @@ export const socials: Social[] = [
     name: "LinkedIn",
     logo: "",
     link: "https://www.linkedin.com/in/zaeyadebenedetti/",
+    button: "My LinkedIn Profile",
   },
-  { name: "Github", logo: "", link: "https://github.com/Azeyzzz" },
+  {
+    name: "Github",
+    logo: "",
+    link: "https://github.com/Azeyzzz",
+    button: "Check out my Github",
+  },
+  {
+    name: "Contact me Here",
+    logo: "",
+    email: "contact@zaeyadebenedetti.com",
+  },
 ];
 export const projects: Project[] = [
   {
-    id: "p1",
+    id: 1,
     title: "Old Portfolio",
     date_created: "Nov 2025",
     date_updated: "June 2026",
@@ -96,7 +113,7 @@ export const projects: Project[] = [
     website: "https://zaeyadebenedetti.com/",
   },
   {
-    id: "p2",
+    id: 2,
     title: "To_DayDashboard",
     date_created: "June 2026",
     date_updated: "June 2026",
@@ -107,7 +124,7 @@ export const projects: Project[] = [
     website: "https://today.zaeyadebenedetti.com/",
   },
   {
-    id: "p3",
+    id: 3,
     title: "Course Project: Portfolio for Melanie",
     date_created: "Jan 2025",
     date_updated: "Nov 2025",

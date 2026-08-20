@@ -13,6 +13,7 @@ export interface SpecularButtonProps {
   textColor?: string;
   lineColor?: string;
   baseColor?: string;
+  backColor?: string;
   intensity?: number;
   shineSize?: number;
   shineFade?: number;
@@ -22,6 +23,7 @@ export interface SpecularButtonProps {
   proximity?: number;
   autoAnimate?: boolean;
   disabled?: boolean;
+  src?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
   type?: "button" | "submit" | "reset";

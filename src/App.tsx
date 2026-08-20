@@ -18,26 +18,6 @@ import {
   socials,
 } from "./data/portfolio.ts";
 import { links } from "./data/navbar.ts";
-const slides: CarouselItem[] = [
-  {
-    id: 1,
-    title: "Fast",
-    description: "Blazing fast performance out of the box.",
-    icon: "⚡",
-  },
-  {
-    id: 2,
-    title: "Flexible",
-    description: "Customize everything to fit your needs.",
-    icon: "🔧",
-  },
-  {
-    id: 3,
-    title: "Reliable",
-    description: "Built to handle whatever you throw at it.",
-    icon: "🛡️",
-  },
-];
 
 function App() {
   const navStyle = "text-font-nav font-spaceG hover:bg-[#00F0FF] px-4";
@@ -56,9 +36,6 @@ function App() {
           </a>
         ))}
       </nav>
-      {/*
-        00ffb3
-        */}
       <section
         className="grid grid-cols-6 grid-rows-9 min-h-screen bg-[#0B0B0F]"
         id="cover-link"
@@ -189,7 +166,7 @@ function App() {
               animateOpacity
               scale={1}
               threshold={0.1}
-              delay={0.5}
+              delay={1}
             >
               <div>
                 <img
@@ -497,7 +474,7 @@ function App() {
                         speed={0.35}
                         followMouse
                         proximity={250}
-                        autoAnimate={true}
+                        autoAnimate={false}
                         onClick={() => setContract("awards")}
                       >
                         Awards
@@ -534,25 +511,33 @@ function App() {
                 threshold={0.1}
                 delay={0}
               >
-                <div className="flex flex-col h-full gap-5 rounded-2xl">
+                <div className="flex flex-col h-full max-h-10 gap-5 rounded-2xl">
                   <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1 text-black">
                     Projects
                   </h2>
-                  {projects.map((project) => (
-                    <div
-                      className="bg-[#00F0FF] border-[#FF007A] border-2 rounded-2xl mb-5 flex-1"
-                      key={project.id}
-                    >
-                      <h2>{project.title}</h2>
-                      <img src={project.photo}></img>
-                      <small>
-                        {" "}
-                        {project.date_created} - {project.date_updated}{" "}
-                      </small>
-                      <p>{project.description}</p>
-                      <a href={project.website}>Link</a>
-                    </div>
-                  ))}
+                  <div
+                    className={`rounded-2xl border-[#FF007A] border-2 h-full flex-1 min-w-full font-spaceG`}
+                  >
+                    <Carousel
+                      items={projects.map(
+                        (project): CarouselItem => ({
+                          id: project.id,
+                          title: project.title,
+                          photo: project.photo,
+                          date: project.date_created,
+                          date_update: project.date_updated,
+                          description: project.description,
+                          link: project.website,
+                        }),
+                      )}
+                      baseWidth={612}
+                      autoplay
+                      autoplayDelay={3000}
+                      pauseOnHover
+                      loop
+                      round={false}
+                    />
+                  </div>
                 </div>
               </AnimatedContent>
             )}
@@ -573,26 +558,27 @@ function App() {
                   <h2 className="bg-[#FF007A] rounded-tl-xl rounded-tr-xl text-4xl text-center flex-1">
                     Awards
                   </h2>
-                  {awards.map((award) => (
-                    <div
-                      className="border-2 bg-[#00F0FF] border-[#FF007A] mb-5 rounded-2xl flex-1 h-full grid grid-cols-4 grid-rows-4 p-2"
-                      key={award.name}
-                    >
-                      <h2 className="row-span-2 col-start-1 row-start-1 col-span-3 text-4xl">
-                        {award.name}
-                      </h2>
-                      <img
-                        className="col-start-4 row-span-4"
-                        src={award.badge}
-                      ></img>
-                      <h4 className="text-xl row-start-3 row-span-1 col-start-1">
-                        {award.awarder}
-                      </h4>
-                      <h4 className="text-xl row-start-4 row-span-1 col-start-1 italic">
-                        {award.date}
-                      </h4>
-                    </div>
-                  ))}
+                  <div
+                    className={`rounded-2xl border-[#FF007A] border-2 h-full flex-1 min-w-full font-spaceG`}
+                  >
+                    <Carousel
+                      items={awards.map(
+                        (award): CarouselItem => ({
+                          id: award.id,
+                          title: award.name,
+                          awarder: award.awarder,
+                          date: award.date,
+                          icon: award.badge,
+                        }),
+                      )}
+                      baseWidth={612}
+                      autoplay
+                      autoplayDelay={3000}
+                      pauseOnHover
+                      loop
+                      round={false}
+                    />
+                  </div>
                 </div>
               </AnimatedContent>
             )}
@@ -688,22 +674,52 @@ function App() {
       <div className="w-full h-15 bg-[#0B0B0F]"></div>
       <section id="socials-page" className="bg-[#0B0B0F]">
         <div id="social-link" className="social-class text-white">
-          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-55 max-w-55 break-all relative z-10 bg-[#FF007A] mb-5 mr-5">
-            Socials
+          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-60 max-w-60 break-all relative z-10 bg-[#FF007A] mb-5 mr-5">
+            <DecryptedText
+              text={"SOCIALS"}
+              animateOn="view"
+              clickMode="once"
+              speed={50}
+              maxIterations={20}
+            />
           </h2>
-          <div className="grid grid-cols-2 grid-rows-2 p-5 gap-5">
+          <div className="grid grid-cols-3 pt-5 pb-10 pl-5 pr-5 gap-5 font-spaceG">
             {socials.map((social) => (
               <div
                 className="p-2 border-[#FF007A] border-2 rounded-2xl "
                 key={social.name}
               >
-                <h2>{social.name}</h2>
+                <h2 className="text-3xl">{social.name}</h2>
                 <img src={social.logo}></img>
-                <h4>{social.link}</h4>
+                <div className="text-center pt-5">
+                  <SpecularButton
+                    size="lg"
+                    radius={18}
+                    tint="#ffffff"
+                    tintOpacity={0}
+                    blur={0}
+                    textColor="#f5f5f5"
+                    lineColor="#FF007A"
+                    baseColor="#525252"
+                    intensity={1}
+                    shineSize={10}
+                    shineFade={40}
+                    thickness={1}
+                    speed={0.35}
+                    followMouse
+                    proximity={250}
+                    autoAnimate={false}
+                    onClick={() => setContract("awards")}
+                  >
+                    <a href={social.link}>{social.button || social.email}</a>
+                  </SpecularButton>
+                </div>
               </div>
             ))}
           </div>
-          <h3 className="pl-1 pb-1">Created by Zaeya DeBenedetti 2026</h3>
+          <h3 className="pl-1 font-spaceG">
+            Created by Zaeya DeBenedetti 2026
+          </h3>
         </div>
       </section>
     </>
