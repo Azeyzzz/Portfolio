@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useMotionValue, useTransform } from "motion/react";
 import type { PanInfo } from "motion/react";
-import React from "react";
-import type { JSX, ReactNode } from "react";
+import type { JSX } from "react";
 
 // replace icons with your own if needed
 export interface CarouselItem {
