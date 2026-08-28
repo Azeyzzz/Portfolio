@@ -49,6 +49,10 @@ export type Social = {
   button?: string;
   email?: string;
 };
+export type About_Me = {
+  title: string;
+  bullet?: Array<string>;
+};
 // --------------------------------------------------------------
 //  Actual Data
 export const meta = {
@@ -58,6 +62,16 @@ export const meta = {
   intro:
     "I'm Zaeya (she/her) and I am a student at University of North Carolina at Charlotte pursuing a Bachelors in Computer Science. I am also an early entry student doing a Master of Science in Cybersecurity. Alongside this I am a part time Cashier / Customer Service Staff at Publix. I am the Vice President for the UNCC Taekwondo Club and the new Treasurer for the Criminal Justice Association. I look foward to combining both cybersecurity and criminal justice in my future career by pursuing digital forensics.",
 };
+export const my_info: About_Me[] = [
+  {
+    title: "About Me",
+    bullet: ["I'm Zaeya"],
+  },
+  {
+    title: "Hobbies",
+    bullet: ["Cooking", "Taekwondo"],
+  },
+];
 export const awards: Cert_Award[] = [
   {
     name: "Heinz College Summer Cybersecurity Fellowship Certificate",

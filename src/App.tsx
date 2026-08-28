@@ -16,6 +16,7 @@ import {
   jobs,
   awards,
   socials,
+  my_info,
 } from "./data/portfolio.ts";
 import { links } from "./data/navbar.ts";
 
@@ -151,7 +152,20 @@ function App() {
               delay={0.5}
             >
               <div className="min-w-full text-black bg-[#00F0FF] h-100 ml-10 rounded-2xl border-2 border-[#FF007A] mt-5 overflow-scroll">
-                <p className="text-4xl p-2">{meta.intro}</p>
+                <Carousel
+                  items={my_info.map(
+                    (about): CarouselItem => ({
+                      title: about.title,
+                      bullet: about.bullet,
+                    }),
+                  )}
+                  baseWidth={612}
+                  autoplay
+                  autoplayDelay={3000}
+                  pauseOnHover
+                  loop
+                  round={false}
+                />
               </div>
             </AnimatedContent>
           </div>

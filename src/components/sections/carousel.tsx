@@ -20,6 +20,7 @@ export interface CarouselItem {
   photo?: string;
   icon?: string;
   link?: string;
+  bullet?: Array<String>;
 }
 
 export interface CarouselProps {
@@ -124,6 +125,9 @@ function CarouselItem({
           <a className="text-xl text-black" href={item.link}>
             here
           </a>
+        )}
+        {item.bullet && (
+          <small className="text-xl text-black">{item.bullet}</small>
         )}
         {item.skills && (
           <small className="text-xl text-black">Skills: {item.skills}</small>
