@@ -65,11 +65,30 @@ export const meta = {
 export const my_info: About_Me[] = [
   {
     title: "About Me",
-    bullet: ["I'm Zaeya"],
+    bullet: [
+      "I'm Zaeya DeBenedetti, Pro (she/her)",
+      "Age: 21",
+      "Location: Charlotte, NC",
+    ],
   },
   {
-    title: "Hobbies",
-    bullet: ["Cooking", "Taekwondo"],
+    title: "What do I do",
+    bullet: [
+      "Senior at University of North Carolina Charlotte",
+      "Majoring in Computer Science",
+      "Early Entry Student at UNCC for MS Cybersecurity",
+      "Cashier/Customer Service Staff at Publix",
+    ],
+  },
+  {
+    title: "Hobbies & Interests",
+    bullet: [
+      "Cooking",
+      "Taekwondo (-58kg Senior Yellow Belt 2026 USATKD National Champion)",
+      "Video Games",
+      "Music",
+      "Working Out",
+    ],
   },
 ];
 export const awards: Cert_Award[] = [

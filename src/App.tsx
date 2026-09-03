@@ -129,7 +129,7 @@ function App() {
           />
         </div>
         <main className="grid grid-cols-10 grid-rows-6">
-          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-75 max-w-75 max-h-15 break-all relative z-10 bg-[#FF007A] col-span-1">
+          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-77 max-w-77 max-h-15 break-all relative z-10 bg-[#FF007A] col-span-1 pl-2">
             <DecryptedText
               text={"ABOUT ME"}
               animateOn="view"
@@ -151,7 +151,7 @@ function App() {
               threshold={0.1}
               delay={0.5}
             >
-              <div className="min-w-full text-black bg-[#00F0FF] h-100 ml-10 rounded-2xl border-2 border-[#FF007A] mt-5 overflow-scroll">
+              <div className="min-w-full text-black bg-[#00F0FF] h-85 ml-10 rounded-2xl border-2 border-[#FF007A] mt-5 overflow-scroll">
                 <Carousel
                   items={my_info.map(
                     (about): CarouselItem => ({
@@ -159,9 +159,9 @@ function App() {
                       bullet: about.bullet,
                     }),
                   )}
-                  baseWidth={612}
+                  baseWidth={765}
                   autoplay
-                  autoplayDelay={3000}
+                  autoplayDelay={5000}
                   pauseOnHover
                   loop
                   round={false}
@@ -230,7 +230,7 @@ function App() {
         threshold={0.1}
         delay={0}
       ></AnimatedContent> */}
-        <h1 className="text-black text-6xl font-spaceG text-wrap min-w-95 max-w-95 break-all relative z-10 bg-[#FF007A] mb-5">
+        <h1 className="text-black text-6xl font-spaceG text-wrap min-w-97 max-w-97 break-all relative z-10 bg-[#FF007A] mb-5 pl-2">
           <DecryptedText
             text={"EXPERIENCES"}
             animateOn="view"
@@ -688,7 +688,7 @@ function App() {
       <div className="w-full h-15 bg-[#0B0B0F]"></div>
       <section id="socials-page" className="bg-[#0B0B0F]">
         <div id="social-link" className="social-class text-white">
-          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-60 max-w-60 break-all relative z-10 bg-[#FF007A] mb-5 mr-5">
+          <h2 className="text-black text-6xl font-spaceG text-wrap min-w-62 max-w-62 break-all relative z-10 bg-[#FF007A] mb-5 mr-5 pl-2">
             <DecryptedText
               text={"SOCIALS"}
               animateOn="view"
