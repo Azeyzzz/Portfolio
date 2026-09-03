@@ -7,7 +7,7 @@ import type { JSX } from "react";
 export interface CarouselItem {
   title: string;
   description?: string;
-  id: number;
+  id?: number;
   company?: string;
   awarder?: string;
   degree?: string;
@@ -20,6 +20,7 @@ export interface CarouselItem {
   photo?: string;
   icon?: string;
   link?: string;
+  bullet?: Array<String>;
 }
 
 export interface CarouselProps {
@@ -81,7 +82,7 @@ function CarouselItem({
       transition={transition}
     >
       {item.icon && (
-        <div className={`${round ? "p-0 m-0" : "mb-4 p-5"}`}>
+        <div className={`${round ? "p-0 m-0" : "mb-4 p-5"} font-spaceG`}>
           <img
             className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-[#120F17]"
             src={item.icon}
@@ -125,8 +126,20 @@ function CarouselItem({
             here
           </a>
         )}
+        {item.bullet && (
+          <ul className="list-disc pl-5">
+            {item.bullet.map((bullet) => (
+              <li className="text-2xl">{bullet}</li>
+            ))}
+          </ul>
+        )}
         {item.skills && (
-          <small className="text-xl text-black">Skills: {item.skills}</small>
+          <ul className="list-disc">
+            <h4>Skills </h4>
+            {item.skills.map((skill) => (
+              <li>{skill}</li>
+            ))}
+          </ul>
         )}
       </div>
     </motion.div>

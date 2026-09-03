@@ -49,6 +49,10 @@ export type Social = {
   button?: string;
   email?: string;
 };
+export type About_Me = {
+  title: string;
+  bullet?: Array<string>;
+};
 // --------------------------------------------------------------
 //  Actual Data
 export const meta = {
@@ -58,6 +62,35 @@ export const meta = {
   intro:
     "I'm Zaeya (she/her) and I am a student at University of North Carolina at Charlotte pursuing a Bachelors in Computer Science. I am also an early entry student doing a Master of Science in Cybersecurity. Alongside this I am a part time Cashier / Customer Service Staff at Publix. I am the Vice President for the UNCC Taekwondo Club and the new Treasurer for the Criminal Justice Association. I look foward to combining both cybersecurity and criminal justice in my future career by pursuing digital forensics.",
 };
+export const my_info: About_Me[] = [
+  {
+    title: "About Me",
+    bullet: [
+      "I'm Zaeya DeBenedetti, Pro (she/her)",
+      "Age: 21",
+      "Location: Charlotte, NC",
+    ],
+  },
+  {
+    title: "What do I do",
+    bullet: [
+      "Senior at University of North Carolina Charlotte",
+      "Majoring in Computer Science",
+      "Early Entry Student at UNCC for MS Cybersecurity",
+      "Cashier/Customer Service Staff at Publix",
+    ],
+  },
+  {
+    title: "Hobbies & Interests",
+    bullet: [
+      "Cooking",
+      "Taekwondo (-58kg Senior Yellow Belt 2026 USATKD National Champion)",
+      "Video Games",
+      "Music",
+      "Working Out",
+    ],
+  },
+];
 export const awards: Cert_Award[] = [
   {
     name: "Heinz College Summer Cybersecurity Fellowship Certificate",
