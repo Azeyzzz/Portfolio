@@ -1,6 +1,6 @@
 import { useState } from "react";
 import headshot from "./assets/photo_cmu.jpg";
-import filler from "./assets/pixel-filler.png";
+import filler from "./assets/contract-filler.png";
 import DecryptedText from "./components/ui/DecryptedText";
 import PixelTransition from "./components/sections/PixelTransition.tsx";
 import AnimatedContent from "./components/ui/AnimatedContent.tsx";
