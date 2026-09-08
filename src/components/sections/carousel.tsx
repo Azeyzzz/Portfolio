@@ -81,14 +81,6 @@ function CarouselItem({
       }}
       transition={transition}
     >
-      {item.icon && (
-        <div className={`${round ? "p-0 m-0" : "mb-4 p-5"} font-spaceG`}>
-          <img
-            className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-[#120F17]"
-            src={item.icon}
-          ></img>
-        </div>
-      )}
       <div className="p-5 font-spaceG">
         <div className="mb-1 font-black font-spaceG text-4xl text-black">
           {item.title}

@@ -96,21 +96,21 @@ export const awards: Cert_Award[] = [
     name: "Heinz College Summer Cybersecurity Fellowship Certificate",
     awarder: "Carnegie Mellon University",
     date: "August 2026",
-    badge: "./src/assets/heinz-itlab-badge.png",
+    badge: "./heinz-itlab-badge.png",
     id: 1,
   },
   {
     name: "Google Cybersecurity Professional Certificate v2",
     awarder: "Coursera",
     date: "June 2026",
-    badge: "./src/assets/google-cyber-prof-badge.png",
+    badge: "./google-cyber-prof-badge.png",
     id: 2,
   },
   {
     name: "Chancellors List Fall 2023 - Spring 2026",
     awarder: "University of North Carolina at Charlotte",
     date: "2023-2026",
-    badge: "./src/assets/chancellor-list-s26.png",
+    badge: "./chancellor-list-s26.png",
     id: 3,
   },
 ];
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     title: "Old Portfolio",
     date_created: "Nov 2025",
     date_updated: "June 2026",
-    photo: "./src/assets/old-portfolio.png",
+    photo: "./old-portfolio.png",
     link: "https://github.com/Azeyzzz/Zaeya-Portfolio",
     description:
       "The first personal portfolio I created using HTML, CSS and Javascript code that I learned in a Web development class. I was able to build off a previous project that I had completed in that class where I made a professional portfolio for a client.",
@@ -150,7 +150,7 @@ export const projects: Project[] = [
     title: "To_DayDashboard",
     date_created: "June 2026",
     date_updated: "June 2026",
-    photo: "./src/assets/to_day-dashboard.png",
+    photo: "./to_day-dashboard.png",
     link: "https://github.com/Azeyzzz/to_day-dashoard",
     description:
       "A dashboard project I created with the help of LLMs. I wanted to create a dashboard I could use to keep track of daily tasks, reminders, and a post it note board.",
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     title: "Course Project: Portfolio for Melanie",
     date_created: "Jan 2025",
     date_updated: "Nov 2025",
-    photo: "./src/assets/mel-port.png",
+    photo: "./mel-port.png",
     link: "https://github.com/Azeyzzz/Zaeya-New-Portfolio",
     description:
       "A semester long project in which I created a portfolio tailored towards my client. My client wanted a professional portfolio that recruiters could use to find out more about them.",
